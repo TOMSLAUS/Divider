@@ -12,21 +12,26 @@ public class Teams {
 		int people = 0;
 		int cik;
 		String names = "";
+
 		System.out.println("Do you want?");
 		System.out.println("1) two persons in team");
 		System.out.println("2) two teams");
+
 		cik = sc.nextInt();
+
 		System.out.println("How many peopple are going to play? ");
+
 		people = sc.nextInt();
 		sc.nextLine();
-		// checking if players are even
-		if (people % 2 == 0) {
 
-		} else {
+		// checking if players are even
+		if (!(people % 2 == 0)) {
 			System.out.println("Players need to be even number");
 			System.exit(0);
 		}
-		ArrayList<String> players = new ArrayList<String>(people);
+
+		ArrayList<String> players = new ArrayList<String>();
+
 //loop for collecting player names
 		for (int i = 0; i <= people - 1; i++) {
 			System.out.println("Enter " + (i + 1) + ". persons name.");
@@ -36,6 +41,7 @@ public class Teams {
 
 		Random rand = new Random();
 		switch (cik) {
+
 		case (1):
 
 			try {
@@ -50,7 +56,7 @@ public class Teams {
 
 				}
 			} catch (Exception ex) {
-
+				System.out.println("Something went wrong!");
 			}
 
 		case (2):
@@ -71,9 +77,10 @@ public class Teams {
 						System.out.println(players.get(0));
 					}
 				}
-sc.close();
-			} catch (Exception ex) {
 
+				sc.close();
+			} catch (Exception ex) {
+				System.out.println("Something went wrong!");
 			}
 		}
 
